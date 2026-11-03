@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f4f1">
+  <meta name="description" content="رقمين شركة تطوّر منتجات رقمية عملية، واضحة، وسهلة الاستخدام.">
+  <title>رقمين | Raqmain</title>
+  <link rel="icon" type="image/png" href="assets/raqmain-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f4f4f1;
+      --surface: #ffffff;
+      --ink: #24282e;
+      --muted: #747a80;
+      --line: #e3e4e0;
+      --dark: #292e35;
+      --dark-soft: #363c45;
+      --accent: #c5d0c8;
+      --max: 1120px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 96px; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "IBM Plex Sans Arabic", system-ui, sans-serif;
+      line-height: 1.85;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(var(--max), calc(100% - 56px)); margin-inline: auto; }
+
+    .site-header {
+      height: 82px;
+      display: flex;
+      align-items: center;
+      background: rgba(244,244,241,.94);
+      border-bottom: 1px solid rgba(36,40,46,.06);
+    }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; gap: 28px; }
+    .brand { display: inline-flex; align-items: center; gap: 11px; font-size: 19px; font-weight: 700; }
+    .brand img { width: 39px; height: 39px; display: block; border-radius: 11px; }
+    .brand-latin { direction: ltr; color: #8a8e90; font-size: 11px; font-weight: 500; letter-spacing: 1.5px; margin-top: 1px; }
+    .brand-copy { display: grid; line-height: 1.25; }
+    .nav { display: flex; align-items: center; gap: 34px; color: #666d73; font-size: 14px; }
+    .nav a { transition: color .2s ease; }
+    .nav a:hover { color: var(--ink); }
+    .nav .nav-contact { color: var(--ink); border: 1px solid #cfd2ce; border-radius: 999px; padding: 8px 17px; }
+
+    .hero { padding: 54px 0 76px; }
+    .hero-panel {
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+      min-height: 470px;
+      border-radius: 27px;
+      padding: 66px 7.2%;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(280px, .88fr);
+      align-items: center;
+      gap: 54px;
+      color: #fff;
+      background: linear-gradient(125deg, var(--dark), var(--dark-soft));
+      box-shadow: 0 18px 45px rgba(32,37,43,.10);
+    }
+    .hero-panel::before, .hero-panel::after {
+      content: ""; position: absolute; z-index: -1; border: 1px solid rgba(255,255,255,.075); border-radius: 50%; pointer-events: none;
+    }
+    .hero-panel::before { width: 510px; height: 510px; left: -235px; top: -310px; }
+    .hero-panel::after { width: 330px; height: 330px; left: 20%; bottom: -270px; }
+    .hero-content { max-width: 530px; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 10px; color: #c6d0c9; font-size: 13px; font-weight: 500; margin-bottom: 19px; }
+    .eyebrow::before { content: ""; width: 23px; height: 1px; background: #aebdb3; }
+    h1 { margin: 0 0 18px; font-size: clamp(35px, 4.2vw, 53px); line-height: 1.35; letter-spacing: -.9px; font-weight: 700; }
+    h1 span { color: #c7d2ca; }
+    .hero-text { max-width: 480px; margin: 0; color: #d0d3d6; font-size: 16px; line-height: 2; }
+    .hero-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+    .button { min-height: 45px; display: inline-flex; justify-content: center; align-items: center; padding: 9px 21px; border-radius: 999px; font-size: 13px; font-weight: 600; transition: transform .2s, background .2s; }
+    .button:hover { transform: translateY(-2px); }
+    .button-primary { color: #252a30; background: #f4f5f1; }
+    .button-primary:hover { background: #fff; }
+    .button-secondary { color: #fff; border: 1px solid rgba(255,255,255,.32); }
+    .button-secondary:hover { background: rgba(255,255,255,.07); }
+    .hero-logo { display: flex; justify-content: center; align-items: center; min-width: 0; }
+    .hero-logo img { display: block; width: min(100%, 390px); height: auto; filter: drop-shadow(0 13px 25px rgba(0,0,0,.12)); }
+
+    .section { padding: 70px 0; }
+    .section-heading { max-width: 660px; margin-bottom: 30px; }
+    .section-label { display: inline-block; color: #707b74; font-size: 12px; font-weight: 700; letter-spacing: .3px; }
+    h2 { margin: 7px 0 10px; font-size: clamp(27px, 3vw, 36px); line-height: 1.5; letter-spacing: -.5px; }
+    .section-intro { margin: 0; max-width: 620px; color: var(--muted); font-size: 15px; line-height: 2; }
+    .about-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); grid-auto-rows: minmax(min-content, auto); gap: 18px; }
+    .about-card { display: flex; flex-direction: column; min-width: 0; height: auto; min-height: 190px; padding: 27px 29px; background: var(--surface); border: 1px solid var(--line); border-radius: 18px; overflow-wrap: anywhere; }
+    .about-card > * { flex: 0 0 auto; }
+    .card-index { display: block; margin-bottom: 16px; color: #9aa19b; font-size: 11px; letter-spacing: 1px; }
+    .about-card h3 { margin: 0 0 8px; font-size: 18px; }
+    .about-card p { margin: 0; color: var(--muted); font-size: 14px; line-height: 2; }
+
+    .products-section { padding-top: 25px; }
+    .products-list { display: grid; gap: 18px; }
+    .product-card {
+      display: flex; align-items: center; justify-content: space-between; gap: 24px;
+      padding: 25px 28px; background: #e9ece8; border: 1px solid #dce1dc; border-radius: 19px;
+    }
+    .product-main { display: flex; align-items: center; gap: 18px; min-width: 0; }
+    .product-icon { width: 62px; height: 62px; flex: 0 0 62px; display: block; object-fit: contain; border-radius: 16px; box-shadow: 0 5px 14px rgba(30,35,40,.12); }
+    .product-main h3 { margin: 0 0 3px; font-size: 19px; }
+    .product-main p { margin: 0; color: #69716c; font-size: 14px; }
+    .product-actions { display: flex; flex: 0 0 auto; flex-direction: column; align-items: center; gap: 12px; }
+    .product-discover { background: var(--dark); color: #fff; }
+    .product-discover:hover { background: var(--dark-soft); }
+    a:focus-visible { outline: 3px solid #497362; outline-offset: 5px; }
+
+    .contact-section { padding: 65px 0 84px; }
+    .contact-panel { display: flex; align-items: center; justify-content: space-between; gap: 28px; padding: 34px 38px; background: var(--surface); border: 1px solid var(--line); border-radius: 20px; }
+    .contact-panel h2 { margin: 5px 0 4px; font-size: 26px; }
+    .contact-panel p { margin: 0; color: var(--muted); font-size: 14px; }
+    .email-link { direction: ltr; display: inline-flex; align-items: center; gap: 10px; padding: 12px 17px; border-radius: 999px; background: #edf0ec; color: #303a33; font-size: 14px; font-weight: 600; white-space: nowrap; transition: background .2s; }
+    .email-link:hover { background: #e1e7e1; }
+
+    .site-footer { border-top: 1px solid var(--line); padding: 22px 0 26px; color: #858b88; font-size: 12px; }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+    .footer-brand { display: inline-flex; align-items: center; gap: 9px; color: #4c5350; font-weight: 600; }
+    .footer-brand img { width: 25px; height: 25px; border-radius: 7px; }
+    .footer-domain { direction: ltr; letter-spacing: 1px; }
+
+    @media (max-width: 800px) {
+      .container { width: min(100% - 40px, var(--max)); }
+      .hero-panel { grid-template-columns: 1fr; gap: 28px; padding: 42px 34px 45px; text-align: center; }
+      .hero-logo { grid-row: 1; }
+      .hero-logo img { width: min(78%, 330px); }
+      .hero-content { margin-inline: auto; }
+      .eyebrow { justify-content: center; }
+      .hero-text { margin-inline: auto; }
+      .hero-actions { justify-content: center; }
+    }
+    @media (max-width: 560px) {
+      .container { width: calc(100% - 32px); }
+      .site-header { height: 70px; }
+      .brand { font-size: 17px; }
+      .brand img { width: 35px; height: 35px; }
+      .nav { gap: 0; }
+      .nav a:not(.nav-contact) { display: none; }
+      .nav .nav-contact { padding: 7px 13px; font-size: 12px; }
+      .hero { padding: 25px 0 43px; }
+      .hero-panel { min-height: 0; padding: 35px 22px 38px; border-radius: 20px; gap: 22px; }
+      .hero-logo img { width: min(86%, 285px); }
+      h1 { font-size: 34px; line-height: 1.4; }
+      .hero-text { font-size: 14px; }
+      .button { min-height: 43px; padding-inline: 17px; font-size: 12px; }
+      .section { padding: 48px 0; }
+      .section-heading { margin-bottom: 23px; }
+      h2 { font-size: 26px; }
+      .section-intro { font-size: 14px; }
+      .about-grid { grid-template-columns: 1fr; gap: 12px; }
+      .about-card { min-height: 0; padding: 23px; }
+      .card-index { margin-bottom: 10px; }
+      .products-section { padding-top: 8px; }
+      .product-card { align-items: flex-start; flex-direction: column; padding: 21px; gap: 15px; }
+      .product-main { gap: 13px; }
+      .product-icon { width: 54px; height: 54px; flex-basis: 54px; border-radius: 14px; font-size: 24px; }
+      .product-main p { font-size: 12px; }
+      .product-actions { flex-direction: row; flex-wrap: wrap; justify-content: flex-start; }
+      .contact-section { padding: 45px 0 55px; }
+      .contact-panel { align-items: flex-start; flex-direction: column; padding: 25px 22px; gap: 19px; }
+      .contact-panel h2 { font-size: 23px; }
+      .email-link { font-size: 12px; padding: 11px 14px; }
+      .footer-inner { flex-wrap: wrap; }
+      .footer-inner > span:nth-child(2) { order: 3; width: 100%; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition: none !important; } }
+  </style>
+  <link rel="stylesheet" href="assets/site-shell.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#home" aria-label="رقمين، الصفحة الرئيسية">
+        <img src="assets/raqmain-icon.png" alt="">
+        <span class="brand-copy"><span>رقمين</span><span class="brand-latin">RAQMAIN</span></span>
+      </a>
+      <nav class="nav" aria-label="التنقل الرئيسي">
+        <a href="#about">من نحن</a>
+        <a href="#products">منتجاتنا</a>
+        <a class="nav-contact" href="#contact">تواصل معنا</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="container">
+        <div class="hero-panel">
+          <div class="hero-content">
+            <div class="eyebrow">برمجيات لها معنى</div>
+            <h1>أفكار لها غاية،<br><span>وبرمجيات تصنع الفرق.</span></h1>
+            <p class="hero-text">في رقمين، نصنع تطبيقات وبرمجيات تعالج احتياجات حقيقية، بتصميم مدروس وتجربة استخدام خالية من التعقيد.</p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#products">اكتشف منتجاتنا</a>
+              <a class="button button-secondary" href="#about">تعرّف علينا</a>
+            </div>
+          </div>
+          <div class="hero-logo"><img src="assets/raqmain-wordmark-white.png" alt="رقمين، Raqmain"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-label">من نحن</span>
+          <h2>التقنية لا تحتاج إلى أن تكون معقدة.</h2>
+          <p class="section-intro">نؤمن بأن المنتج الرقمي الجيد يجعل الأمور أسهل، لا أكثر ازدحامًا. لذلك نهتم بالفكرة وبالتفاصيل التي تصنع تجربة استخدام واضحة ومريحة.</p>
+        </div>
+        <div class="about-grid">
+          <article class="about-card">
+            <span class="card-index">01 / الفكرة</span>
+            <h3>نبدأ من الحاجة</h3>
+            <p>نبحث عن المساحات التي يمكن للتقنية أن تقدم فيها فائدة ملموسة، ثم نحول الأفكار إلى أدوات مفيدة في الحياة اليومية.</p>
+          </article>
+          <article class="about-card">
+            <span class="card-index">02 / التجربة</span>
+            <h3>البساطة جزء من الجودة</h3>
+            <p>نحرص على أن تكون منتجاتنا واضحة وعملية، ونتجنب التعقيد والخصائص التي لا تضيف قيمة حقيقية للمستخدم.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section products-section" id="products">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-label">منتجاتنا</span>
+          <h2>أدوات رقمية لغرض واضح.</h2>
+          <p class="section-intro">نطوّر منتجات مستقلة، لكل منها وظيفة محددة وتجربة مصممة بعناية.</p>
+        </div>
+        <div class="products-list">
+          <article class="product-card">
+            <div class="product-main">
+              <img class="product-icon" src="assets/najeez-icon.png" alt="" width="62" height="62" loading="lazy">
+              <div><h3>نجيز</h3><p>مهامك اليومية، ببساطة. نظّم ما تريد إنجازه، تابع تقدمك، واعرف كيف تقضي وقتك. كل ما تحتاجه للتركيز على ما يهم، دون تعقيد.</p></div>
+            </div>
+            <div class="product-actions">
+              <a class="button product-discover" href="najeez/index.html" aria-label="اكتشف نجيز">اكتشف</a>
+            </div>
+          </article>
+          <article class="product-card">
+            <div class="product-main">
+              <img class="product-icon" src="assets/darjar-icon.png" alt="" width="62" height="62" loading="lazy">
+              <div><h3>دارجار</h3><p>مجتمع إقامتك في مكان واحد: تواصل، ميزانية، اشتراكات، وثائق وخدمات.</p></div>
+            </div>
+            <div class="product-actions">
+              <a class="button product-discover" href="darjar/index.html" aria-label="اكتشف دارجار">اكتشف</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div class="container">
+        <div class="contact-panel">
+          <div>
+            <span class="section-label">الدعم والتواصل</span>
+            <h2>يسعدنا التواصل معك.</h2>
+            <p>للاستفسارات أو الملاحظات المتعلقة بمنتجاتنا، يمكنك مراسلتنا عبر البريد الإلكتروني.</p>
+          </div>
+          <a class="email-link" href="mailto:support@raqmain.ma">support@raqmain.ma <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand"><img src="assets/raqmain-icon.png" alt="">رقمين</div>
+      <span>© <span id="year">2026</span> Raqmain. جميع الحقوق محفوظة.</span>
+      <span class="footer-domain">raqmain.ma</span>
+    </div>
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

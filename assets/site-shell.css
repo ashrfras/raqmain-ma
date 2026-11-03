@@ -1,0 +1,41 @@
+/* Shared header and footer; keep identical across all pages. */
+.site-header, .site-footer { line-height: 1.85; overflow-wrap: normal; }
+.site-header .container, .site-footer .container { width: min(1120px, calc(100% - 56px)); margin-inline: auto; }
+    .site-header {
+      height: 82px;
+      display: flex;
+      align-items: center;
+      background: rgba(244,244,241,.94);
+      border-bottom: 1px solid rgba(36,40,46,.06);
+    }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; gap: 28px; }
+    .brand { display: inline-flex; align-items: center; gap: 11px; font-size: 19px; font-weight: 700; }
+    .brand img { width: 39px; height: 39px; display: block; border-radius: 11px; }
+    .brand-latin { direction: ltr; color: #8a8e90; font-size: 11px; font-weight: 500; letter-spacing: 1.5px; margin-top: 1px; }
+    .brand-copy { display: grid; line-height: 1.25; }
+    .nav { display: flex; align-items: center; gap: 34px; color: #666d73; font-size: 14px; }
+    .nav a { transition: color .2s ease; }
+    .nav a:hover { color: var(--ink); }
+    .nav .nav-contact { color: var(--ink); border: 1px solid #cfd2ce; border-radius: 999px; padding: 8px 17px; }
+
+    .site-footer { border-top: 1px solid var(--line); padding: 22px 0 26px; color: #858b88; font-size: 12px; }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+    .footer-brand { display: inline-flex; align-items: center; gap: 9px; color: #4c5350; font-weight: 600; }
+    .footer-brand img { width: 25px; height: 25px; border-radius: 7px; }
+    .footer-domain { direction: ltr; letter-spacing: 1px; }
+
+
+@media (max-width: 800px) {
+  .site-header .container, .site-footer .container { width: min(100% - 40px, 1120px); }
+}
+@media (max-width: 560px) {
+  .site-header .container, .site-footer .container { width: calc(100% - 32px); }
+  .site-header { height: 70px; }
+  .brand { font-size: 17px; }
+  .brand img { width: 35px; height: 35px; }
+  .nav { gap: 0; }
+  .nav a:not(.nav-contact) { display: none; }
+  .nav .nav-contact { padding: 7px 13px; font-size: 12px; }
+  .footer-inner { flex-wrap: wrap; }
+  .footer-inner > span:nth-child(2) { order: 3; width: 100%; }
+}
